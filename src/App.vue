@@ -1,12 +1,17 @@
 <template lang="pug">
 NavBar
 RouterView
-Pagination
 </template>
 
 <script setup>
+import { useStore } from "vuex";
 import NavBar from "./components/NavBar.vue";
-import Pagination from "./components/Pagination.vue";
+
+
+const store = useStore();
+
+store.commit("initialiseStore")
+
 </script>
 
 <style scoped>
