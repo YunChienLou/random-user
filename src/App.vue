@@ -1,12 +1,11 @@
 <template lang="pug">
 NavBar
-SearchResult
+RouterView
 Pagination
 </template>
 
 <script setup>
 import NavBar from "./components/NavBar.vue";
-import SearchResult from "./components/SearchResult.vue";
 import Pagination from "./components/Pagination.vue";
 </script>
 

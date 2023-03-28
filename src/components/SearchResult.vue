@@ -5,12 +5,17 @@ div.grid.grid-cols-5.gap-4.m-4
 
 <script setup>
 import Card from "./Card.vue";
-import { inject, onMounted, ref } from "vue";
-const axios = inject("axios");
+import { onMounted, ref } from "vue";
+import { get_pagination_user } from "../axios";
+import { useStore } from "vuex";
+
+const store = useStore();
 const users = ref();
 
+
 onMounted(() => {
-  axios.get("https://randomuser.me/api/?results=10").then((res) => {
+  get_pagination_user(1, 50).then((res) => {
+    console.log(res);
     users.value = res.data.results;
   });
 });
