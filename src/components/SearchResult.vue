@@ -4,6 +4,7 @@ div(v-if="isList" class="lg:grid-cols-5 md:grid-cols-3").grid.grid-cols-1.gap-4.
 div(v-else).grid.grid-cols-1.gap-4.m-4
       List(v-for="(user,index) in users" :imgUrl="user.picture.large" :index="index" :amount="amount" :currentPage="currentPage" :name="user.name.first+' '+user.name.last" :gender="user.gender")
 paginate(
+  :initial-page="currentPage"
   :page-count="maxPage"
   :click-handler="clickPage"
   :prev-text="'Prev'"
