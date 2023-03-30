@@ -5,9 +5,18 @@ const store = createStore({
     isList: false,
     userAmount: 30,
     favList: [],
+    favIdxArry: [],
     currentPage: 1,
+    openModal: false,
+    modalData: {},
   },
   mutations: {
+    setOpenModal(state, payload) {
+      state.openModal = payload;
+    },
+    setModalData(state, payload) {
+      state.modalData = payload;
+    },
     setIsList(state, payload) {
       state.isList = payload;
     },
@@ -20,8 +29,14 @@ const store = createStore({
     pushFavList(state, payload) {
       state.favList.push(payload);
     },
+    pushFavIdxArry(state, payload) {
+      state.favIdxArry.push(payload);
+    },
     removeFavList(state, index) {
       state.favList.splice(index, 1);
+    },
+    removeFavIdxArry(state, index) {
+      state.favIdxArry.splice(index, 1);
     },
     initialiseStore(state) {
       // Check if the ID exists

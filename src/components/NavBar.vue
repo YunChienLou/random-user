@@ -46,7 +46,7 @@ const setUserAmount = (amount) => {
   console.log("setUserAmount ", amount);
 };
 
-selectValue.value = store.state.userAmount
+selectValue.value = store.state.userAmount;
 
 watchEffect(() => {
   if (selectValue.value != null) {
@@ -58,5 +58,10 @@ watchEffect(() => {
 <style scoped>
 .activeClass {
   color: red;
+}
+.router-link-active {
+  text-decoration: underline;
+  color: red;
+  display: inline-block;
 }
 </style>
